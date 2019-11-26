@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="VisitCard.Views.Auth">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+            <Label Text="Connexion" TextColor="White" FontAttributes="Bold" FontSize="Large"></Label>
+        </StackLayout>
+    </NavigationPage.TitleView>
+   
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="15" Margin="0,30,0,0">
+            <Label Text="Email" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+            <Entry Text="{Binding Item.Email}" d:Text="Adresse Email" FontSize="Small" />
+            <Label Text="Mot de passe" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <Editor Text="{Binding Item.Mdp}" d:Text="Mot De Passe" Visual="Material" FontSize="Small" Margin="0" IsTextPredictionEnabled="False" />
+            <Button Text="Se Connecter" Clicked="OnLogin" BackgroundColor="#2b78e4" TextColor="White"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
