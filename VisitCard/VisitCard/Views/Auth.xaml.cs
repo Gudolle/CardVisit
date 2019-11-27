@@ -17,6 +17,7 @@ namespace VisitCard.Views
         public Auth()
         {
             InitializeComponent();
+            Services.Auth.UserAuth = null;
             Item = new User();
             BindingContext = this;
 
@@ -24,6 +25,7 @@ namespace VisitCard.Views
         public Auth(User _user)
         {
             InitializeComponent();
+            Services.Auth.UserAuth = null;
             Item = _user;
             BindingContext = this;
         }

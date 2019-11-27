@@ -43,7 +43,35 @@ namespace VisitCard.Views
             (sender as Auth).OperationCompeleted -= Auth_OperationCompleted;
             // Do something after change
             Item = Services.Auth.UserAuth;
-            EmailTest.Text = String.Format("{0} {1}", Item.Nom, Item.Prenom);
+            Name.Text = Item.Nom;
+            Prenom.Text = Item.Prenom;
+            Status.Text = Item.Status;
+            int compteur = 0;
+            if (Competences.Children.Count != 0)
+            {
+                for (int i = 0; i <= Competences.Children.Count; i++)
+                    Competences.Children.RemoveAt(0);
+            }
+            foreach (var item in Item.Competences)
+            {
+
+                Competences.Children.Add(new Label()
+                {
+                   Text= item.Name
+                }, 0, compteur);
+                compteur++;
+            }
+            CardGrid.Children.Add(new Image()
+            {
+                HeightRequest = 200,
+                Source = Item.Image
+            }, 0, 0);
+        }
+
+        private void Disconnect_Clicked(object sender, EventArgs e)
+        {
+            Item = new User();
+            Login();
         }
     }
 }

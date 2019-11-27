@@ -7,10 +7,27 @@
              x:Class="VisitCard.Views.Profil">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Profil"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Label Text="{Binding Item.Email }" x:Name="EmailTest"  ></Label>
+            <Grid BackgroundColor="#51506a">
+                <Button Text="Se déconnecter" Clicked="Disconnect_Clicked" BackgroundColor="#760C0C"/>
+            </Grid>
+            <Grid Margin="10" HeightRequest="200" x:Name="CardGrid">
+                
+            </Grid>
+
+            <Grid Margin="10" BackgroundColor="WhiteSmoke" >
+                <Label Grid.Row="1" Grid.Column="0" Text="Nom :" FontAttributes="Bold" FontSize="Medium" TextDecorations="Underline"/>
+                <Label Grid.Row="1" Grid.Column="1" x:Name="Name" FontSize="Medium" FontAttributes="Italic"/>
+                <Label Grid.Row="1" Grid.Column="2" Text="Prénom :" FontAttributes="Bold" FontSize="Medium" TextDecorations="Underline" />
+                <Label Grid.Row="1" Grid.Column="3" x:Name="Prenom" FontSize="Medium" FontAttributes="Italic"/>
+                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Text="Status" FontAttributes="Bold" FontSize="Medium" TextDecorations="Underline"/>
+                <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" x:Name="Status" FontAttributes="Italic"/>
+            </Grid>
+            <Grid Margin="10" BackgroundColor="WhiteSmoke">
+                <Label Grid.Row="0" Grid.Column="0" Text="Compétences :" FontAttributes="Bold" FontSize="Medium" TextDecorations="Underline"/>
+            </Grid>
+            <Grid Margin="10,0,10,10" BackgroundColor="WhiteSmoke" RowSpacing="2" ColumnSpacing="2" x:Name="Competences">
+                
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
