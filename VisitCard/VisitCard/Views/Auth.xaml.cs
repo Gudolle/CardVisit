@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.Toast;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,10 +32,22 @@ namespace VisitCard.Views
         public event EventHandler<EventArgs> OperationCompeleted;
         async void OnLogin(object sender, EventArgs args)
         {
-            Services.Auth.UserAuth = Item;
-            OperationCompeleted?.Invoke(this, EventArgs.Empty);
-
-            await Navigation.PopModalAsync();
+            User user = User.GetUser(Item.Email, Item.Mdp);
+            if (user != null)
+            {
+                Services.Auth.UserAuth = user;
+                OperationCompeleted?.Invoke(this, EventArgs.Empty);
+                await Navigation.PopModalAsync();
+            }
+            else
+            {
+                CrossToastPopUp.Current.ShowToastMessage("Les identifiants sont incorrect.");
+            }
+        }
+        protected override bool OnBackButtonPressed()
+        {
+            CrossToastPopUp.Current.ShowToastMessage("Vous devez vous connecter pour continuer."); 
+            return true;
         }
     }
 }

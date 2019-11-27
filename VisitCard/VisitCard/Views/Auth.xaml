@@ -6,19 +6,34 @@
              mc:Ignorable="d"
              x:Class="VisitCard.Views.Auth">
 
-    <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
-            <Label Text="Connexion" TextColor="White" FontAttributes="Bold" FontSize="Large"></Label>
-        </StackLayout>
-    </NavigationPage.TitleView>
-   
     <ContentPage.Content>
-        <StackLayout Spacing="20" Padding="15" Margin="0,30,0,0">
-            <Label Text="Email" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" />
-            <Entry Text="{Binding Item.Email}" d:Text="Adresse Email" FontSize="Small" />
-            <Label Text="Mot de passe" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-            <Editor Text="{Binding Item.Mdp}" d:Text="Mot De Passe" Visual="Material" FontSize="Small" Margin="0" IsTextPredictionEnabled="False" />
-            <Button Text="Se Connecter" Clicked="OnLogin" BackgroundColor="#2b78e4" TextColor="White"></Button>
+        <StackLayout Spacing="20" >
+            <Grid BackgroundColor="Black"
+              HeightRequest="200">
+                <Image Aspect="AspectFill"
+                   Source="LoginFond.jpg"
+                   Opacity="0.6" />
+                <Label Text="Connexion"
+                   TextColor="White"
+                       FontSize="Large"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center" />
+            </Grid>
+            <Grid Padding="15" Margin="0,30,0,0">
+                <Label Grid.Row="0" Grid.Column="0" Text="Compte Utilisateur" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                <Entry Grid.Row="1" Grid.Column="0" Text="{Binding Item.Email}" d:Text="Adresse Email" FontSize="Small" />
+                <Label Grid.Row="2" Grid.Column="0" Text="Mot de passe" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                <Entry Grid.Row="3" Grid.Column="0" Text="{Binding Item.Mdp}" IsPassword="True" d:Text="Mot De Passe" FontSize="Small" IsTextPredictionEnabled="False" />
+                <Button Grid.Row="4" Grid.Column="0" Text="Se Connecter" Clicked="OnLogin" BackgroundColor="#2b78e4" TextColor="White" ImageSource="login.png"></Button>
+            </Grid>
+            <!--
+            <Grid BackgroundColor="Black">
+                <Image Aspect="AspectFill"
+                   Source="Google.png"
+                   Opacity="0.6" />
+            </Grid>
+            -->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

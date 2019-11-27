@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisitCard.Android", "VisitCard.Android\VisitCard.Android.csproj", "{D0A42CDC-3740-497F-BDD5-F86FF53FA973}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisitCard", "VisitCard\VisitCard.csproj", "{2B6D8630-ADEB-4FC6-A362-8C6100204060}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisitCard", "VisitCard\VisitCard.csproj", "{2B6D8630-ADEB-4FC6-A362-8C6100204060}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

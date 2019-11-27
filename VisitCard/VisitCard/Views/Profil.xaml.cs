@@ -42,7 +42,8 @@ namespace VisitCard.Views
             // Unsubscribe to the event to prevent memory leak
             (sender as Auth).OperationCompeleted -= Auth_OperationCompleted;
             // Do something after change
-            EmailTest.Text   = Item.Email;
+            Item = Services.Auth.UserAuth;
+            EmailTest.Text = String.Format("{0} {1}", Item.Nom, Item.Prenom);
         }
     }
 }
