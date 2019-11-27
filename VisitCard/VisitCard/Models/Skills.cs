@@ -15,12 +15,12 @@ namespace VisitCard.Models
             Name = _name;
         }
 
-        public static List<Skills> ListSkillsYann() => new List<Skills>()
+        public static List<Skills> ListSkillsYann = new List<Skills>()
         {
             new Skills("C#"),
             new Skills("SQL")
         };
-        public static List<Skills> ListSkillsPierre() => new List<Skills>()
+        public static List<Skills> ListSkillsPierre = new List<Skills>()
         {
             new Skills("Windows"),
             new Skills("Linux")

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="VisitCard.Views.EditionProfil">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Margin="10" HeightRequest="200" x:Name="CardGrid">
+            </Grid>
+            <Grid Margin="10" BackgroundColor="WhiteSmoke">
+                <Label Text="Nom :" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" TextDecorations="Underline" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Entry Grid.Row="0" Grid.Column="1" Text="{Binding Item.Nom}" FontSize="Medium" FontAttributes="Italic" x:Name="Nom" />
+                <Label Text="Prénom :" Grid.Row="0" Grid.Column="2" FontAttributes="Bold" FontSize="Medium" TextDecorations="Underline" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Entry Grid.Row="0" Grid.Column="3" Text="{Binding Item.Prenom}" FontSize="Medium" FontAttributes="Italic" x:Name="Prenom"/>
+                <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Text="Status :" FontAttributes="Bold" FontSize="Medium" TextDecorations="Underline" VerticalOptions="Center"/>
+                <Entry Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Text="{Binding Item.Status}" FontSize="Medium" FontAttributes="Italic" x:Name="Status" />
+            </Grid>
+            <Grid Margin="10" BackgroundColor="#26349E">
+                <Button Text="Enregistrer" Clicked="Save_Clicked" BackgroundColor="#FF26349E" TextColor="White"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

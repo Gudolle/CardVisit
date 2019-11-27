@@ -41,6 +41,16 @@ namespace VisitCard.Views
         {
             // Unsubscribe to the event to prevent memory leak
             (sender as Auth).OperationCompeleted -= Auth_OperationCompleted;
+            Update();
+        }
+        private void Edition_OperationCompleted(object sender, EventArgs e)
+        {
+            // Unsubscribe to the event to prevent memory leak
+            (sender as EditionProfil).OperationCompeleted -= Auth_OperationCompleted;
+            Update();
+        }
+        private void Update()
+        {
             // Do something after change
             Item = Services.Auth.UserAuth;
             Name.Text = Item.Nom;
@@ -57,7 +67,7 @@ namespace VisitCard.Views
 
                 Competences.Children.Add(new Label()
                 {
-                   Text= item.Name
+                    Text = item.Name
                 }, 0, compteur);
                 compteur++;
             }
@@ -67,11 +77,23 @@ namespace VisitCard.Views
                 Source = Item.Image
             }, 0, 0);
         }
-
         private void Disconnect_Clicked(object sender, EventArgs e)
         {
             Item = new User();
             Login();
+        }
+
+        private void Edition_Clicked(object sender, EventArgs e)
+        {
+            Edition();
+        }
+        async void Edition()
+        {
+            var UpdateProfil = new EditionProfil(Item);
+            // Subscribe to the event when things are updated
+            UpdateProfil.OperationCompeleted += Edition_OperationCompleted;
+
+            await Navigation.PushModalAsync(UpdateProfil);
         }
     }
 }

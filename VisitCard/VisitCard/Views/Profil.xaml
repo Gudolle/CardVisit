@@ -8,7 +8,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Grid BackgroundColor="#51506a">
-                <Button Text="Se déconnecter" Clicked="Disconnect_Clicked" BackgroundColor="#760C0C"/>
+                <Button Text="Se déconnecter" Clicked="Disconnect_Clicked" BackgroundColor="#760C0C" TextColor="White"/>
             </Grid>
             <Grid Margin="10" HeightRequest="200" x:Name="CardGrid">
                 
@@ -26,7 +26,9 @@
                 <Label Grid.Row="0" Grid.Column="0" Text="Compétences :" FontAttributes="Bold" FontSize="Medium" TextDecorations="Underline"/>
             </Grid>
             <Grid Margin="10,0,10,10" BackgroundColor="WhiteSmoke" RowSpacing="2" ColumnSpacing="2" x:Name="Competences">
-                
+            </Grid>
+            <Grid BackgroundColor="#51506a" Margin="10">
+                <Button Text="Edition" Clicked="Edition_Clicked" BackgroundColor="#1236AC" TextColor="White"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

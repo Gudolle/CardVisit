@@ -25,7 +25,7 @@ namespace VisitCard.Models
                 Nom = "Gbedo",
                 Prenom = "Yann",
                 Status = "Concepteur Développeur d'application",
-                Competences = Skills.ListSkillsYann(),
+                Competences = Skills.ListSkillsYann,
                 Image = "CardDemoYann.png"
             },
             new User()
@@ -35,7 +35,7 @@ namespace VisitCard.Models
                 Nom = "Tixier",
                 Prenom = "Pierre",
                 Status = "Technicien infrastructure réseau",
-                Competences = Skills.ListSkillsPierre(),
+                Competences = Skills.ListSkillsPierre,
                 Image = "CardDemoPierre.png"
             }
         };
