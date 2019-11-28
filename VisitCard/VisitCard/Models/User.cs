@@ -37,6 +37,16 @@ namespace VisitCard.Models
                 Status = "Technicien infrastructure réseau",
                 Competences = Skills.ListSkillsPierre,
                 Image = "CardDemoPierre.png"
+            },
+            new User()
+            {
+                Email = "Pierre2@gmail.com",
+                Mdp = "Test",
+                Nom = "Tixier2",
+                Prenom = "Pierre2",
+                Status = "Technicien infrastructure réseau",
+                Competences = Skills.ListSkillsPierre,
+                Image = "CardDemoPierre.png"
             }
         };
         public static User GetUser(string Email, string Mdp) => ListUser().SingleOrDefault(x => x.Email == Email && x.Mdp == Mdp);

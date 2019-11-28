@@ -18,7 +18,9 @@ namespace VisitCard.Models
         public static List<Skills> ListSkillsYann = new List<Skills>()
         {
             new Skills("C#"),
-            new Skills("SQL")
+            new Skills("SQL"),
+            new Skills("PHP"),
+            new Skills("HTML")
         };
         public static List<Skills> ListSkillsPierre = new List<Skills>()
         {

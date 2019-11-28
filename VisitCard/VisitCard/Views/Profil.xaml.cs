@@ -59,7 +59,9 @@ namespace VisitCard.Views
             int compteur = 0;
             if (Competences.Children.Count != 0)
             {
-                for (int i = 0; i <= Competences.Children.Count; i++)
+
+                int Max = Competences.Children.Count;
+                for (int i = 0; i < Max; i++)
                     Competences.Children.RemoveAt(0);
             }
             foreach (var item in Item.Competences)
@@ -67,7 +69,7 @@ namespace VisitCard.Views
 
                 Competences.Children.Add(new Label()
                 {
-                    Text = item.Name
+                    Text = String.Format("- {0}",item.Name)
                 }, 0, compteur);
                 compteur++;
             }
